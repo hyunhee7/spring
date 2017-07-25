@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Engine 객체 -->
+	<bean id="myEngine" class="test.mypac.Engine"></bean>
+	
+	<!-- Car 객체 -->
+	<bean id="car1" class="test.mypac.Car"></bean>
+	<bean id="car2" class="test.mypac.Car">
+		<property name="company" value="현대자동차"/>
+		<property name="engine" value=""/>
+	</bean>
+</beans>

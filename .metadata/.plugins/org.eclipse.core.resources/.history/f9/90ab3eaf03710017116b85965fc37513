@@ -1,0 +1,6 @@
+package test.mypac;
+
+public class MemberDao {
+	public void insert();
+	public void update();
+}

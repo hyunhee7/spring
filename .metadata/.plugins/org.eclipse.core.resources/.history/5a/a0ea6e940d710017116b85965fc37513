@@ -1,0 +1,14 @@
+package test.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+
+//1. Spring Controller 로 만들겠다는 어노테이션
+@Controller
+public class FortuneController {
+	public String fortune(HttpServletRequest request){
+		
+		return null;
+	}
+}

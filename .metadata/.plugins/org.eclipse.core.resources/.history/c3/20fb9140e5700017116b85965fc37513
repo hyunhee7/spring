@@ -1,0 +1,15 @@
+package test.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import test.mypac.Weapon;
+
+public class MainClass {
+	public static void main(String[] args) {
+		ApplicationContext context=new ClassPathXmlApplicationContext("test/main/init.xml");
+		
+		Weapon weapon=(Weapon)context.getBean("myWeapon");
+		weapon.attack();
+	}
+}

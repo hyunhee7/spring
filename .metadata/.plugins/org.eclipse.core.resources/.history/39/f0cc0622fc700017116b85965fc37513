@@ -1,0 +1,15 @@
+package test.main2;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import test.mypac.Car;
+
+public class MainClass {
+	public static void main(String[] args) {
+		ApplicationContext context=new ClassPathXmlApplicationContext("test/main2/init.xml");
+	
+		Car car1=(Car)context.getBean("car1");
+	}
+	
+}

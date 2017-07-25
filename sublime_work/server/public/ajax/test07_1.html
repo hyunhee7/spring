@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>test07.html</title>
+<link rel="stylesheet" href="/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+	<div class="wrapper">
+		<div class="thumbnail">
+			<img src="/images/image1.png"/>
+			<div class="caption">
+				<h3>제시카</h3>
+				<p>어쩌구.. 저쩌구...</p>
+			</div>
+		</div>
+	</div>
+	<button id="moreBtn" class="btn btn-primary">더보기</button>
+</div>
+<script src="/js/jquery-1.11.2.js"></script>
+<script>
+	var CurrentIndex=0;
+	$("#moreBtn").click(function(){
+		CurrentIndex++;
+		$.ajax({
+			url:"/ajax/moreInfo",
+			method:"get",
+			data:{index:CurrentIndex},
+			success:function(data){
+				var $img = $("<img/>").attr("src", data.src);
+				var $title = $("<h3/>").text(data.title);
+				var $content = $("<p/>").text(data.content);
+
+				var $caption = $("<div/>")
+				.addClass("caption")
+				.append($title)
+				.append($content);
+
+				$("<div/>")
+				.addClass("thumbnail")
+				.append($img)
+				.append($caption)
+				.appendTo(".wrapper");
+
+
+			}
+		});
+	});
+</script>	
+</body>
+</html>
