@@ -1,0 +1,15 @@
+package test.member.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MemberInsertController {
+	@RequestMapping("/member/insert")
+	public String insert(HttpServletRequest request){
+		String name=request.getParameter("name");
+		String addr=request.getParameter("addr");
+	}
+}

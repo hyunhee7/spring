@@ -4,8 +4,10 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
-	
+
+	<!-- Spring bean 컨테이너에 등록할 객체를 스캔해서 등록 -->
 	<context:component-scan base-package="test.controller"/>
+	<context:component-scan base-package="test.friends.controller"/>
 	
 	<!-- View Page 설정 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

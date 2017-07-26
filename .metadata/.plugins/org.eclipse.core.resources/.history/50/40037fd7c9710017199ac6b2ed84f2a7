@@ -1,0 +1,8 @@
+package test.member.service;
+
+import test.member.dto.MemberDto;
+
+public interface MemberService {
+	public void insert(MemberDto dto);
+	public void update(MemberDto dto);
+}

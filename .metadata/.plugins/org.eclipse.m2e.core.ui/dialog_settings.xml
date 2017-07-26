@@ -14,12 +14,14 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="Step02_MyBatis"/>
 			<item value="Step01_Hello"/>
 			<item value="Spring_Basic"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Step02_MyBatis"/>
 			<item value="Step01_Hello"/>
 			<item value="Spring_Basic"/>
 		</list>

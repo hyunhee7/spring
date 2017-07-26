@@ -1,0 +1,5 @@
+package test.member.service;
+
+public class MemberServiceImpl {
+
+}

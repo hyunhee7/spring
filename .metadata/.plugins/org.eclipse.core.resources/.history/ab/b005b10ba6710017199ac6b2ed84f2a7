@@ -1,0 +1,15 @@
+package test.friends.controller;
+
+import org.springframework.stereotype.Controller;
+
+//1. component scan 했을 때 bean 으로 등록 될 수 있도록
+@Controller
+public class FriendsListController {
+	//2. 요청 맵핑
+	public String list(){
+		//3. 비즈니스 로직의 수행결과를 request에 담고
+		
+		//4. View 페이지로 forward 이동
+		return "friends/list";
+	}
+}
