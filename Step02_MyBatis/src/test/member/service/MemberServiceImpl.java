@@ -24,8 +24,7 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public void update(MemberDto dto) {
-		// TODO Auto-generated method stub
-		
+		memberDao.update(dto);
 	}
 
 	@Override
@@ -35,8 +34,15 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public ModelAndView getData(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		//회원의 번호를 이용해서 회원정보를 얻어온다.
+		MemberDto dto=memberDao.getData(num);
+		//ModelAndView 객체를 생성해서
+		ModelAndView mView=new ModelAndView();
+		//request.setAttribute() 대신 .addObject() 해서 
+		//회원정보를 담아서 
+		mView.addObject("dto", dto);
+		//리턴해준다.
+		return mView;
 	}
 	
 	//회원 목록을 얻어오는 비즈니스 로직을 처리하는 서비스의 메소드 

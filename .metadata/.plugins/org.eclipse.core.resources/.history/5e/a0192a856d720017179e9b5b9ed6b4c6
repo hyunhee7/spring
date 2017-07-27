@@ -1,0 +1,17 @@
+package test.member.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.ModelAndView;
+
+import test.member.service.MemberService;
+
+public class MemberUpdateController {
+	
+	@Autowired
+	private MemberService memberService;
+	
+	@RequestMapping("/member/update")
+	public ModelAndView update(){
+		return null;
+	}
+}

@@ -23,8 +23,7 @@ public class MemberDaoImpl implements MemberDao{
 
 	@Override
 	public void update(MemberDto dto) {
-		// TODO Auto-generated method stub
-		
+		session.update("member.update", dto);
 	}
 
 	@Override
@@ -34,8 +33,9 @@ public class MemberDaoImpl implements MemberDao{
 
 	@Override
 	public MemberDto getData(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		MemberDto dto=session.selectOne("member.getData", num);
+		return dto;
 	}
 
 	@Override
