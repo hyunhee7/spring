@@ -1,0 +1,5 @@
+package com.test.step06.users.dto;
+
+public class UsersDto {
+
+}

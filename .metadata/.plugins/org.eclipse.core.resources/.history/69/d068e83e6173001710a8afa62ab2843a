@@ -1,0 +1,8 @@
+package com.gura.step06.file.view;
+
+import org.springframework.stereotype.Component;
+
+@Component("fileDownView")
+public class FileDownView {
+
+}

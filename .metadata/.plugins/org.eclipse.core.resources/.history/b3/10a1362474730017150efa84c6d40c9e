@@ -1,0 +1,7 @@
+package com.test.step06.users.dao;
+
+import com.test.step06.users.dto.UsersDto;
+
+public interface UsersDao {
+	public void insert(UsersDto dto)
+}

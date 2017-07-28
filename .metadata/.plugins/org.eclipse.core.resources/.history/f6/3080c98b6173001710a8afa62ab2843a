@@ -1,0 +1,9 @@
+package com.gura.step06.file.view;
+
+import org.springframework.stereotype.Component;
+
+//component 스캔 되었을 때 bean으로 만들고 bean의 이름을 "fileDownView"
+@Component("fileDownView")
+public class FileDownView {
+
+}

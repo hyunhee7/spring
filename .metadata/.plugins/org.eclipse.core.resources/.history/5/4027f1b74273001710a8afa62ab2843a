@@ -1,0 +1,5 @@
+package com.gura.step06.file.service;
+
+public class FileServiceImpl implements FileService{
+
+}

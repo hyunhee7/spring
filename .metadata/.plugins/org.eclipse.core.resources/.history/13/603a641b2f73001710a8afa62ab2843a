@@ -1,0 +1,6 @@
+package com.gura.step05.dto;
+
+public class FriendDto {
+	private int num;
+	private String name;
+}

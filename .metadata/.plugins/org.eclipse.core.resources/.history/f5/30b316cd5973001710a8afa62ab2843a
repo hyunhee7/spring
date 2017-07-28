@@ -1,0 +1,30 @@
+package com.gura.step06.file.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.gura.step06.file.dto.FileDto;
+import com.gura.step06.file.service.FileService;
+
+@Controller
+public class FileController {
+
+	//의존객체
+	@Autowired
+	private FileService fileService;
+	
+	@RequestMapping("/file/insertform")
+	public String insertform(){
+		return "file/insertform";
+	}
+	
+	@RequestMapping("/file/insert")
+	public String insert(HttpServletRequest request, @ModelAttribute FileDto dto){
+		return null;
+	}
+	
+}

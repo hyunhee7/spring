@@ -1,0 +1,22 @@
+package com.test.step06.users.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+@Controller
+public class UsersController {
+
+	
+	@RequestMapping("/users/signup_form")
+	public String insertform(){
+		
+		return "/users/signup_form";
+	}
+	
+	@RequestMapping("/users/signin_form")
+	public String insertform(){
+		
+		return "/users/signin_form";
+	}	
+}

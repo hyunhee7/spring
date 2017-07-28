@@ -1,0 +1,8 @@
+package com.gura.step06.file.dto;
+
+public class FileDto {
+	private int num;
+	private String writer;
+	private String title;
+	private String orgFileName;
+}

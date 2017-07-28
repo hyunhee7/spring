@@ -1,0 +1,40 @@
+package com.gura.step06.file.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.gura.step06.file.dto.FileDto;
+import com.gura.step06.file.service.FileService;
+
+@Controller
+public class FileController {
+
+	//의존객체
+	@Autowired
+	private FileService fileService;
+	
+	@RequestMapping("/file/insertform")
+	public String insertform(){
+		return "file/insertform";
+	}
+	
+	@RequestMapping("/file/insert")
+	public String insert(HttpServletRequest request, @ModelAttribute FileDto dto){
+		//FileService 객체를 통해서 업로드 처리를 한다.
+		fileService.insert(request, dto);
+		
+		//파일 목록 보기로 리다일렉트 이동 시킨다.
+		return "redirect:/file/list.do";
+	}
+	
+	@RequestMapping("/file/list")
+	public ModelAndView list(){
+		ModelAndView mView = fileService.list();
+		mView.setViewName("file/list");
+	}
+}

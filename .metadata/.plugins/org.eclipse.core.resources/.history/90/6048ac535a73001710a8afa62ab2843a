@@ -1,0 +1,42 @@
+package com.gura.step06.file.service;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.gura.step06.file.dao.FileDao;
+import com.gura.step06.file.dto.FileDto;
+
+@Service
+public class FileServiceImpl implements FileService{
+
+	//의존객체
+	@Autowired
+	private FileDao fileDao;
+	
+	@Override
+	public void insert(HttpServletRequest request, FileDto dto) {
+		
+	}
+
+	@Override
+	public ModelAndView list() {
+		
+		return null;
+	}
+
+	@Override
+	public void delete(HttpServletRequest request, int num) {
+		
+		
+	}
+
+	@Override
+	public ModelAndView getData(int num) {
+		
+		return null;
+	}
+
+}

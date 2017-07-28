@@ -1,0 +1,20 @@
+package com.gura.step06.file.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.gura.step06.file.service.FileService;
+
+@Controller
+public class FileController {
+
+	//의존객체
+	@Autowired
+	private FileService fileService;
+	
+	public String insertform(){
+		return "file/insertform";
+	}
+	
+	
+}

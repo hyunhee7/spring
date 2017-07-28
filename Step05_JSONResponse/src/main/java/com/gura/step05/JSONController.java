@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.gura.step05.dto.FriendDto;
+
 @Controller
 public class JSONController {
 	
@@ -74,6 +76,15 @@ public class JSONController {
 		list.add(map1);
 		list.add(map2);
 		return list;
+	}
+	
+	@RequestMapping("/json05")
+	@ResponseBody
+	public FriendDto json05(){
+		
+		FriendDto dto=new FriendDto(1, "김구라", true);
+		return dto;
+		
 	}
 }
 

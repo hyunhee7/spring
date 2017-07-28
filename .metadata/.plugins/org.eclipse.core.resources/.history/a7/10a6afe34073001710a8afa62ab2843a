@@ -1,0 +1,8 @@
+package com.gura.step06.file.dao;
+
+import com.gura.step06.file.dto.FileDto;
+
+public interface FileDao {
+	public void insert(FileDto dto);
+	public void delete(int num);
+}
