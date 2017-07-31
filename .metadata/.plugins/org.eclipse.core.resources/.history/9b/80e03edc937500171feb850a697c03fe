@@ -1,0 +1,15 @@
+package com.gura.step07.users.service;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.servlet.ModelAndView;
+
+import com.gura.step07.users.dto.UsersDto;
+
+public interface UsersService {
+	public void insert(UsersDto dto);
+	public boolean isExist(String id);
+	public ModelAndView signin(HttpServletRequest request);
+	public ModelAndView updateForm(HttpServletRequest request);
+
+}

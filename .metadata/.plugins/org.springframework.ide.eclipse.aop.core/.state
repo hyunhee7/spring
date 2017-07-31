@@ -3,6 +3,9 @@
 <aop-project name="Step01_Hello"/>
 <aop-project name="Spring_Basic"/>
 <aop-project name="Step04_AbstractView"/>
+<aop-project name="Step05_JSONResponse2"/>
 <aop-project name="Step03_Hello"/>
+<aop-project name="Step06_CafeExample"/>
 <aop-project name="Step05_JSONResponse"/>
+<aop-project name="Step06_FileUpload"/>
 </aop-reference-model>

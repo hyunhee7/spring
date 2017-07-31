@@ -1,0 +1,26 @@
+package test.service;
+
+public class WriteServiceImpl implements WriteService{
+
+	@Override
+	public void write() {
+		System.out.println("글쓰기 작업중..");
+		try{
+			Thread.sleep(5000);
+		}catch(Exception e){}
+		
+	}
+
+	@Override
+	public void writeToFrient() {
+		System.out.println("친구에게 글쓰기 작업중...");
+		
+	}
+
+	@Override
+	public void writeToTeacher(String name) {
+		System.out.println("선생님에게 글쓰기 작업중...");
+		
+	}
+
+}

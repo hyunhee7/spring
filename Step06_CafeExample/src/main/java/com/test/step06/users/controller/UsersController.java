@@ -19,4 +19,10 @@ public class UsersController {
 		
 		return "/users/signin_form";
 	}	
+
+	@RequestMapping("/users/checkid")
+	public String checkId(){
+		
+		return "/users/signin_form";
+	}		
 }

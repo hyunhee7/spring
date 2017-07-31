@@ -1,0 +1,9 @@
+package test.main;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainClass {
+	public static void main(String[] args) {
+		ApplicationContext context=ClassPathXmlApplicationContext("test/main/init.xml");
+	}
+}

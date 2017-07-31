@@ -1,0 +1,8 @@
+package com.gura.step07.users.service;
+
+import com.gura.step07.users.dto.UsersDto;
+
+public interface UsersService {
+	public void insert(UsersDto dto);
+	public boolean isExist(String id);
+}

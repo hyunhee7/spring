@@ -1,0 +1,5 @@
+package com.gura.step07.users.dao;
+
+public class UsersDaoImpl {
+
+}

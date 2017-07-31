@@ -1,0 +1,6 @@
+package test.service;
+
+public interface WriteService {
+	public void write();
+	public void writeToFrient();
+}
