@@ -24,6 +24,44 @@ public class UsersController {
 	@Autowired
 	private UsersService usersService;
 	
+	public ModelAndView privateUpdate(HttpServletRequest request, 
+			@ModelAttribute UsersDto dto){
+		
+		usersService.update(dto);
+		ModelAndView mView=new ModelAndView();
+		mView.addObject("msg","수정하였습니다");
+		String url=request.getContextPath()+"/users/info.do";
+		mView.addObject("url",url);
+		mView.setViewName("users/alert");
+		return mView;
+	}
+	
+	@RequestMapping("/users/updateform")
+	public ModelAndView privateUpdateForm(HttpServletRequest request){
+		String id=(String)request.getSession().getAttribute("id");
+		ModelAndView mView=usersService.detail(id);
+		mView.setViewName("users/updateform");
+		return mView;
+	}
+	
+	@RequestMapping("/users/delete")
+	public ModelAndView privateDelete(HttpServletRequest request){
+		ModelAndView mView=usersService.delete(request.getSession());
+		mView.addObject("msg","회원 탈퇴 처리 되었습니다");
+		mView.addObject("url",request.getContextPath());
+		mView.setViewName("users/alert");
+		return mView;
+	}
+	
+	@RequestMapping("/users/info")
+	public ModelAndView privateInfo(HttpServletRequest request){
+		//로그인된 아이디를 얻어온다.
+		String id=(String)request.getSession().getAttribute("id");
+		ModelAndView mView=usersService.detail(id);
+		mView.setViewName("users/info");
+		return mView;
+	}
+	
 	@RequestMapping("/users/signin_form")
 	public String signinForm(){
 		

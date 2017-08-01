@@ -1,0 +1,11 @@
+package com.gura.step07;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.servlet.ModelAndView;
+
+public class PlayController {
+	public ModelAndView privatePlay(HttpServletRequest request){
+		
+	}
+}

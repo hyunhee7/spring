@@ -1,5 +1,7 @@
 package test.main;
 
+import java.util.Map;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,9 +13,14 @@ public class MainClass {
 		
 		WriteService service=context.getBean(WriteService.class);
 		
-		service.write();
-		service.writeToFriend();
-		service.writeToTeacher("김구라");
+		//service.write();
+		//service.writeToFriend();
+		//service.writeToTeacher("김구라");
+		
+		Map<String,Object> map=service.writeToMother();
+		System.out.println("여기는 main 메소드 입니다.");
+		String msg=(String)map.get("msg");
+		System.out.println("msg: "+msg);
 	}
 }
 

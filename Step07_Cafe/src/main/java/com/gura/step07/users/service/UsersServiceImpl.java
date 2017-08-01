@@ -62,23 +62,39 @@ public class UsersServiceImpl implements UsersService{
 		
 		return mView;
 	}
-	//회원정보 수정 폼 처리 
+
+
+	//회원정보 삭제 처리 
 	@Override
-	public ModelAndView updateForm(HttpSession session) {
-		// TODO Auto-generated method stub
-		return null;
+	public ModelAndView delete(HttpSession session) {
+		//탈퇴할 회원의 아이디를 읽어온다.
+		String id=(String)session.getAttribute("id");
+		//Dao를 이용해서 삭제한다.
+		usersDao.delete(id);
+		//세션 초기화
+		session.invalidate();
+		ModelAndView mView=new ModelAndView();
+		
+		return mView;
 	}
-	//회원정보 수정 처리 
+	
+	@Override
+	public ModelAndView detail(String id) {
+		//ModelAndView 객체에 담아서
+		ModelAndView mView=new ModelAndView();
+		if(id!=null){
+			//아이디에 해당하는 회원정보를 얻어와서
+			UsersDto dto=usersDao.getData(id);
+			mView.addObject("dto", dto);
+		}
+
+		//리턴해준다.
+		return mView;
+	}
 	@Override
 	public void update(UsersDto dto) {
 		// TODO Auto-generated method stub
 		
-	}
-	//회원정보 삭제 처리 
-	@Override
-	public ModelAndView delete(HttpSession session) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

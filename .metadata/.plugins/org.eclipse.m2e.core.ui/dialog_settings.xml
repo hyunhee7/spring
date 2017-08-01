@@ -14,6 +14,9 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="Spring_Aop_Anno2"/>
+			<item value="Spring_Aop_Anno"/>
+			<item value="Spring_Aop"/>
 			<item value="Step02_MyBatis"/>
 			<item value="Step01_Hello"/>
 			<item value="Spring_Basic"/>
@@ -21,6 +24,9 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Spring_Aop_Anno2"/>
+			<item value="Spring_Aop_Anno"/>
+			<item value="Spring_Aop"/>
 			<item value="Step02_MyBatis"/>
 			<item value="Step01_Hello"/>
 			<item value="Spring_Basic"/>

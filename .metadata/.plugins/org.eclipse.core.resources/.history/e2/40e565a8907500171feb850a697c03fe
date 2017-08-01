@@ -1,5 +1,0 @@
-package com.gura.step07.users.dao;
-
-public interface UsersDao {
-	
-}

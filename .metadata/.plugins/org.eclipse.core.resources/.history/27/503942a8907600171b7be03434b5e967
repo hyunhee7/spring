@@ -1,0 +1,5 @@
+package com.gura.step07.cafe.dao;
+
+public class CafeCommentDaoImpl {
+	
+}

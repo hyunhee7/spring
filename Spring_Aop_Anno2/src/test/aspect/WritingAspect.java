@@ -1,5 +1,10 @@
 package test.aspect;
 
+import java.util.Map;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -25,5 +30,47 @@ public class WritingAspect {
 	public void preparePen(){
 		//글을 쓰기 전에 펜을 준비하는 작업
 		System.out.println("펜을 준비해서 뚜껑을 열어요");
+	}
+	
+	@After("execution(public void write*())")
+	public void endPen(){
+		System.out.println("펜의 뚜껑을 닫고 정리를 해요");
+	}
+	/*
+	 * Around Aop는 JoinPoint 를 지원해 준다.
+	 */
+	@Around("execution(public void *ToTeacher(..))")
+	public void aroundPen(ProceedingJoinPoint joinPoint) throws Throwable{
+		//Aop가 적용된 메소드에 전달된 인자를 배열로 얻어내기
+		Object[] args=joinPoint.getArgs();
+		//배열에 있는 객체를 반복문 돌면서 불러온다.
+		for(Object tmp:args){
+			//만일 객체가 String type이라면 
+			if(tmp instanceof String){
+				String name=(String)tmp;
+				System.out.println("메소드에 전달된 String:"+name);
+			}
+		}
+		//Aop가 적용된 메소드 수행하고 리턴되는 데이터가 있으면 받기
+		joinPoint.proceed();
+		
+		//여기는 메소드 수행 이후에 할 작업을 하면 된다.
+		System.out.println("Aop 적용 이후에 작업을 해요~");
+	}
+	
+	@Around("execution(public java.util.Map *ToMother())")
+	public Object aroundMother(ProceedingJoinPoint joinPoint) throws Throwable{
+		//Aop가 적용된 메소드가 리턴해주는 참조값을 Object type으로 받는
+		Object obj=joinPoint.proceed();
+		if(obj instanceof Map){
+			//원래 type으로 casting 해
+			Map<String, Object> map=(Map)obj;
+			String msg=(String)map.get("msg");
+			System.out.println("msg: "+msg);
+			//Map에 저장된 데이터 수정하기
+			map.put("msg", "안녕 엄마~");
+		}
+		return obj;
+		//After는 joinPoint를 이용할 수 없다.
 	}
 }

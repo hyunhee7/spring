@@ -1,0 +1,11 @@
+package com.gura.step07.cafe.dto;
+
+public class CafeDto {
+	private int num; //글번호
+	private String writer;
+	private String title;
+	private String content;
+	private int viewCount;
+	
+	
+}
