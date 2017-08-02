@@ -6,7 +6,7 @@ public class CafeDto {
 	private String title; //제목
 	private String content; //내용
 	private int viewCount; //조회수
-	private String regdate; //등록일
+	private String regdate; //등록일 
 	
 	public CafeDto(){}
 
@@ -67,7 +67,6 @@ public class CafeDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	
 	
 	
 }

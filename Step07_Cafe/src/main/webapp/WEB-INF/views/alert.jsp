@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>views/alert.jsp</title>
 </head>
 <body>
 <p>${msg }</p>
-<a href="${redirectUrl }">확인</a>
+<a href="${redirectUrl}">확인</a>
 </body>
 </html>

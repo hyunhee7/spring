@@ -9,6 +9,6 @@
 </head>
 <body>
 <h3>로그인한 회원 전용 공간</h3>
-<p><strong>${id }</strong>님 놀아 보아요!</p>
+<p><strong>${id }</strong> 님 놀아 보아요!</p>
 </body>
 </html>

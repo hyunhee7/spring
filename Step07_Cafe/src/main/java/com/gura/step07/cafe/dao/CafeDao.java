@@ -1,6 +1,5 @@
 package com.gura.step07.cafe.dao;
 
-
 import java.util.List;
 
 import com.gura.step07.cafe.dto.CafeDto;

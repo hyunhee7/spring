@@ -10,44 +10,44 @@ import com.gura.step07.cafe.dto.CafeDto;
 
 @Repository
 public class CafeDaoImpl implements CafeDao{
-
+	
 	@Autowired
 	private SqlSession session;
 	
 	@Override
 	public void insert(CafeDto dto) {
-		// TODO Auto-generated method stub
-		
+		session.insert("cafe.insert", dto);
 	}
 
 	@Override
 	public void update(CafeDto dto) {
-		// TODO Auto-generated method stub
-		
+		session.update("cafe.update",dto);
 	}
 
 	@Override
 	public void delete(int num) {
-		// TODO Auto-generated method stub
-		
+		session.delete("cafe.delete",num);
 	}
 
 	@Override
 	public CafeDto getData(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return session.selectOne("cafe.getData", num);
 	}
 
 	@Override
 	public List<CafeDto> getList() {
-		// TODO Auto-generated method stub
-		return null;
+		List<CafeDto> list=session.selectList("cafe.getList");
+		return list;
 	}
 
+	//조회수 증가 시키는 메소드
 	@Override
 	public void increaseViewCount(int num) {
-		// TODO Auto-generated method stub
+		session.update("cafe.increaseViewCount", num);
 		
 	}
 
 }
+
+

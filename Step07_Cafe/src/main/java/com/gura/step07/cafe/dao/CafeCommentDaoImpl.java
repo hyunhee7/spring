@@ -10,26 +10,31 @@ import com.gura.step07.cafe.dto.CafeCommentDto;
 
 @Repository
 public class CafeCommentDaoImpl implements CafeCommentDao{
-
+	
 	@Autowired
 	private SqlSession session;
 	
 	@Override
 	public void insert(CafeCommentDto dto) {
-		// TODO Auto-generated method stub
-		
+		session.insert("cafeComment.insert", dto);
 	}
 
 	@Override
 	public List<CafeCommentDto> getList(int ref_group) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return session.selectList("cafeComment.getList", ref_group);
 	}
 
 	@Override
 	public int getSequence() {
-		// TODO Auto-generated method stub
-		return 0;
+		int seq=session.selectOne("cafeComment.getSequence");
+		return seq;
 	}
-	
+
 }
+
+
+
+
+
+

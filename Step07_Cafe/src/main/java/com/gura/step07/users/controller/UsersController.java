@@ -24,14 +24,14 @@ public class UsersController {
 	@Autowired
 	private UsersService usersService;
 	
-	public ModelAndView privateUpdate(HttpServletRequest request, 
+	@RequestMapping("/users/update")
+	public ModelAndView privateUpdate(HttpServletRequest request,
 			@ModelAttribute UsersDto dto){
-		
 		usersService.update(dto);
 		ModelAndView mView=new ModelAndView();
-		mView.addObject("msg","수정하였습니다");
+		mView.addObject("msg", "수정하였습니다.");
 		String url=request.getContextPath()+"/users/info.do";
-		mView.addObject("url",url);
+		mView.addObject("url", url);
 		mView.setViewName("users/alert");
 		return mView;
 	}
@@ -46,9 +46,10 @@ public class UsersController {
 	
 	@RequestMapping("/users/delete")
 	public ModelAndView privateDelete(HttpServletRequest request){
-		ModelAndView mView=usersService.delete(request.getSession());
-		mView.addObject("msg","회원 탈퇴 처리 되었습니다");
-		mView.addObject("url",request.getContextPath());
+		ModelAndView mView=
+				usersService.delete(request.getSession());
+		mView.addObject("msg","회원 탈퇴 처리 되었습니다.");
+		mView.addObject("url", request.getContextPath());
 		mView.setViewName("users/alert");
 		return mView;
 	}
