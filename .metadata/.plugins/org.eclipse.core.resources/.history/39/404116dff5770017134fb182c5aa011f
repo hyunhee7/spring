@@ -1,0 +1,29 @@
+package com.gura.step08.shop.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class ShopController {
+
+	@RequestMapping("/shop/signup_form")
+	public String signupForm(){
+		return "shop/signup_form";
+	}
+	
+	@RequestMapping("/shop/deposit_form")
+	public String depositForm(){
+		
+		return "shop/deposit_form";
+	}
+	
+	@RequestMapping("shop/buy_form")
+	public String buyForm(){
+		return "shop/buy_form";
+	}
+	
+	public ModelAndView signup(@RequestParam String id){
+		
+	}
+}

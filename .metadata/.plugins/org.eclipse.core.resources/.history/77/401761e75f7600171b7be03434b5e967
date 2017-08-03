@@ -1,7 +1,0 @@
-package com.gura.step07;
-
-import org.springframework.web.servlet.ModelAndView;
-
-public class PlayController {
-	public ModelAndView
-}

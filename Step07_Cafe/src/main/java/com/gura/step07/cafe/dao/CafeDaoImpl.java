@@ -45,9 +45,15 @@ public class CafeDaoImpl implements CafeDao{
 	@Override
 	public void increaseViewCount(int num) {
 		session.update("cafe.increaseViewCount", num);
-		
 	}
 
+	@Override
+	public int getCount() {
+		int count=session.selectOne("board.getCount");
+		return count;
+	}
+
+	
 }
 
 

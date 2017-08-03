@@ -1,0 +1,10 @@
+package com.gura.step08.exception;
+
+import org.springframework.dao.DataAccessException;
+
+/*
+ * Dao 에서 특정 상황에 발생시킬 Custom Exception 클래스 정의하기
+ */
+public class NoDeliveryException extends DataAccessException{
+	
+}

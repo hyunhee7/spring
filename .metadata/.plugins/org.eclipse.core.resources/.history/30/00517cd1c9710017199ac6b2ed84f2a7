@@ -1,6 +1,0 @@
-package test.member.service;
-
-public class MemberService {
-	public void insert(MemberDto dto);
-	public void update(MemberDto dto)
-}

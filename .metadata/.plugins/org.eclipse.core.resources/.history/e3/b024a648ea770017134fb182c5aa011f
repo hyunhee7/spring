@@ -1,0 +1,18 @@
+package com.gura.step08.exception;
+
+public class CustomException extends Exception{
+	private String message="사용자 정의 Exception";
+	
+	public CustomException(String message){
+		this.message=message;
+	}
+	
+	public void setMessage(String message){
+		this.message=message;
+	}	
+	
+	public String getMessage(){
+		
+		return message;
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Step08_Exception/src/main/java/com/gura/step08/mybatis/UsersMapper.xml&apos; to &apos;ShopMapper.xml&apos;" description="Rename resource &apos;UsersMapper.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/gura/step08/mybatis/UsersMapper.xml" name="ShopMapper.xml" stamp="1501728473230" updateReferences="true"/>
+</session>

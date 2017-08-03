@@ -1,0 +1,37 @@
+package com.gura.step08.shop.dao;
+
+import com.gura.step08.shop.dto.ShopDto;
+
+public class ShopDaoImpl implements ShopDao{
+
+	@Override
+	public void signup(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deposit(ShopDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void withDraw(ShopDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addPoint(ShopDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void requestDilivery(ShopDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

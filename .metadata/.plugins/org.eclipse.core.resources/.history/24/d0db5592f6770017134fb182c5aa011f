@@ -1,0 +1,5 @@
+package com.gura.step08.shop.dto;
+
+public class ShopDto {
+
+}

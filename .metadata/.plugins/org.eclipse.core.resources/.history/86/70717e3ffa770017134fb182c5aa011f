@@ -1,0 +1,36 @@
+package com.gura.step08.shop.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.gura.step08.shop.dao.ShopDao;
+import com.gura.step08.shop.dto.ShopDto;
+
+@Service
+public class ShopServiceImpl implements ShopService{
+	
+	@Autowired
+	private ShopDao shopDao;
+	
+	//회원가입 처리
+	@Override
+	public void signup(String id) {
+		shopDao.signup(id);
+	}
+	//입금 처리
+	@Override
+	public void deposit(ShopDto dto) {
+		shopDao.deposit(dto);
+		
+	}
+	//물품 구입 처리
+	@Override
+	public void buy(ShopDto dto) {
+		//1. 보너스 포인트를 적립하고
+		
+		//2. 계좌 잔액을 줄이고
+		
+		//3. 배송 정보를 입력한다.
+	}
+
+}

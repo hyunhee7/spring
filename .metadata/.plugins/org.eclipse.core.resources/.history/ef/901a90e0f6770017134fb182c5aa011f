@@ -1,0 +1,10 @@
+package com.gura.step08.shop.dto;
+
+public class ShopDto {
+	private String id;
+	private int money;
+	private int point;
+	private String addr;
+	
+	public ShopDto(){}
+}

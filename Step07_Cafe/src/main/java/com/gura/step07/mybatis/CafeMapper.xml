@@ -7,16 +7,22 @@
 		TO_CHAR(regdate, 'YY.MM.DD HH24:MI') AS regdate
 	</sql>
 
-	<update id="update" parameterType="cafeDto">
+	<update id="update" parameterType="cafeDto" >
 		UPDATE board_cafe
 		SET title=#{title}, content=#{content}
 		WHERE num=#{num}
 	</update>
 
-	<select id="getList" resultType="cafeDto">
-		SELECT <include refid="cafeColumns"/>
-		FROM board_cafe
-		ORDER BY num DESC
+	<select id="getList" resultType="cafeDto" parameterType="CafeDto">
+		SELECT *
+		FROM (SELECT result1.*,ROWNUM rnum 
+			  FROM (SELECT num,writer,title,content,viewCount,
+					TO_CHAR(regdate, 'YY.MM.DD HH24:MI') AS regdate
+					FROM board_cafe
+				    ORDER BY num DESC
+				    ) result1
+		     )
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}		
 	</select>
 	
 	<insert id="insert" parameterType="cafeDto">
@@ -36,15 +42,26 @@
 	<!-- 글정보 얻어오기 -->
 	<select id="getData" parameterType="int" 
 		resultType="cafeDto">
-		SELECT <include refid="cafeColumns"/>
-		FROM board_cafe
-		WHERE num=#{num}	
+		SELECT result1.*
+		FROM 
+			(SELECT num,writer,title,content,viewCount,
+			TO_CHAR(regdate, 'YYYY.MM.DD AM HH:MI') regdate,
+			LAG(num, 1, 0) OVER(ORDER BY num DESC) prevNum,
+			LEAD(num, 1, 0) OVER(ORDER BY num DESC) nextNum
+			FROM board_cafe
+			ORDER BY num DESC) result1
+		WHERE num=#{num}		
 	</select>
 	
 	<delete id="delete" parameterType="int">
 		DELETE FROM board_cafe
 		WHERE num=#{num}
 	</delete>	
+	<select id="getCount" resultType="int">
+		SELECT NVL(MAX(ROWNUM), 0)
+		FROM board_cafe
+	</select>	
+	
 </mapper>
 
 

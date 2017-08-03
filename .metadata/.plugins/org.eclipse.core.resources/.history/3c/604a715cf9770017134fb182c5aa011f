@@ -1,0 +1,5 @@
+package com.gura.step08.shop.service;
+
+public interface ShopService {
+	public void signup(String id);
+}

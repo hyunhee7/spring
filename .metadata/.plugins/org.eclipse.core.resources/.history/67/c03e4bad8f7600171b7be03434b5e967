@@ -1,6 +1,0 @@
-package com.gura.step07.cafe.dao;
-
-public interface CafeDao {
-	public void insert(CafeDto dto);
-	public void update(CafeDto dto);
-}

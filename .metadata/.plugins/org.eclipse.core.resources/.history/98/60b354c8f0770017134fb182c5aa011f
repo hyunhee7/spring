@@ -1,0 +1,10 @@
+CREATE TABLE client_account
+(id VARCHAR2(20) PRIMARY KEY,
+balance NUMBER, 
+bonusPoint NUMBER);
+
+CREATE TABLE dispatch_request
+( num NUMBER PRIMARY KEY,
+  name VARCHAR2(20),
+	
+)
